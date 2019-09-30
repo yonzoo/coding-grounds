@@ -1,11 +1,11 @@
-package SecondLab;
+package animals;
 
 import java.io.Serializable;
 
 abstract class Animal implements Serializable {
-    public int id;
-    public String name;
-    public double weight;
+    protected int id;
+    protected String name;
+    protected double weight;
 
     public String getName() {
         return name;

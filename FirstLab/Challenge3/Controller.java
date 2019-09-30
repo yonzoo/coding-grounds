@@ -6,15 +6,24 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Controller {
-    private BookList bookList;
-    private Scanner scn = new Scanner(System.in);
+    private static BookList bookList;
+    private static File file;
+    private static Scanner scn = new Scanner(System.in);
 
-    public Controller(BookList bookList) {
-        this.bookList = bookList;
-    }
-
-    public Controller() {
-        this.bookList = new BookList();
+    static {
+        bookList = new BookList();
+        file = new File("./booklist.ser");
+        try {
+            FileInputStream fin = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fin);
+            file.createNewFile();
+            bookList = (BookList) ois.readObject();
+        } catch (FileNotFoundException ex) {
+            System.out.println("Your file was not found, making a new one...");
+            ex.printStackTrace();
+        } catch (IOException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public static void writeObjectToFile(BookList bookList) {
@@ -26,23 +35,6 @@ public class Controller {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-    }
-
-    public static BookList readObjectFromFile() {
-        BookList bookList;
-        try {
-            FileInputStream fin = new FileInputStream("./booklist.ser");
-            ObjectInputStream ois = new ObjectInputStream(fin);
-            bookList = (BookList) ois.readObject();
-        } catch (FileNotFoundException e) {
-            bookList = new BookList();
-            Controller.writeObjectToFile(bookList);
-        } catch (IOException | ClassNotFoundException e) {
-            bookList = new BookList();
-            Controller.writeObjectToFile(bookList);
-            e.printStackTrace();
-        }
-        return bookList;
     }
 
     public void startMenu() {

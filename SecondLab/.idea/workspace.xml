@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1025e287-6a5d-4ffe-8b1d-dc6fea166c66" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../FirstLab/Challenge1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstLab/Challenge1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstLab/Challenge2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstLab/Challenge2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstLab/Challenge3/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstLab/Challenge3/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FirstLab/Challenge3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstLab/Challenge3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Herbivorous.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Omnivorous.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Predator.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1RZ5zG7uxLJytzw633D9vd5CAzf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ThirdLab" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1025e287-6a5d-4ffe-8b1d-dc6fea166c66" name="Default Changelist" comment="" />
+      <created>1569862037147</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569862037147</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="817" y="445" width="345" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1569862646060">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="817" y="445" width="345" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1569862646060" />
+    <state x="726" y="311" key="FileChooserDialogImpl" timestamp="1569862860785">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="726" y="311" key="FileChooserDialogImpl/70.27.1850.1053@70.27.1850.1053" timestamp="1569862860785" />
+  </component>
+</project>

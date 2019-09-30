@@ -1,4 +1,4 @@
-package SecondLab;
+package animals;
 
 import java.io.*;
 import java.util.ArrayList;
