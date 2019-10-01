@@ -10,6 +10,6 @@ public class Predator extends Animal implements Serializable {
 
     @Override
     public double calculateFood() {
-        return weight <= 30 ? weight * 0.08 : weight * 0.14;
+        return getWeight() <= 30 ? getWeight() * 0.08 : getWeight() * 0.14;
     }
 }

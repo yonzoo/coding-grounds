@@ -10,6 +10,6 @@ public class Omnivorous extends Animal implements Serializable {
 
     @Override
     public double calculateFood() {
-        return weight <= 30 ? weight * 0.03 : weight * 0.10;
+        return getWeight() <= 30 ? getWeight() * 0.03 : getWeight() * 0.10;
     }
 }

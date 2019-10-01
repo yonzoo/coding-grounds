@@ -3,15 +3,17 @@ package animals;
 import java.io.Serializable;
 
 abstract class Animal implements Serializable {
-    protected int id;
-    protected String name;
-    protected double weight;
+    private int id;
+    private String name;
+    private double weight;
 
     public String getName() {
         return name;
     }
 
     public int getId() { return id; }
+
+    public double getWeight() { return weight; }
 
     public Animal(int id, String name, double weight) {
         this.id = id;

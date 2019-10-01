@@ -10,7 +10,7 @@ public class Herbivorous extends Animal implements Serializable {
 
     @Override
     public double calculateFood() {
-        return weight <= 30 ? weight * 0.05 : weight * 0.1;
+        return getWeight() <= 30 ? getWeight() * 0.05 : getWeight() * 0.1;
     }
 
 }
