@@ -1,0 +1,4 @@
+receiverAccountId: 1, senderAccountId: 2, moneyAmount: 12313
+receiverAccountId: 2, senderAccountId: 1, moneyAmount: 12321
+receiverAccountId: 3, senderAccountId: 4, moneyAmount: 12344
+receiverAccountId: 1, senderAccountId: 3, moneyAmount: 12414

@@ -1,0 +1,6 @@
+<Transactions>
+    <Transaction senderAccountId="1" receiverAccountId="2" moneySent="12313"/>
+    <Transaction senderAccountId="2" receiverAccountId="1" moneySent="12321"/>
+    <Transaction senderAccountId="3" receiverAccountId="4" moneySent="12344"/>
+    <Transaction senderAccountId="1" receiverAccountId="3" moneySent="12414"/>
+</Transactions>
