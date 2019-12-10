@@ -34,6 +34,17 @@ public class FileManager {
         return result;
     }
 
+    public static write(path: Path) {
+        System.out.println("Please write a string below to write to file");
+        String s = ""
+        BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
+         while (s.length == 0) {
+             s = scn.nextLine();
+         }
+         writer.append('\n' + s);
+         writer.close();
+    }
+
     public static void cd(String name) throws NullPointerException {
         if (name.equals(".")) return;
         if (name.equals("..")) {
