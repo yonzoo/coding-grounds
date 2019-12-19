@@ -1,7 +1,7 @@
 #ifndef NEURAL_NETWORK
 #define NEURAL_NETWORK
-#include "layer.hpp"
 #include <vector>
+#include "layer.hpp"
 
 class NeuralNetwork
 {
@@ -10,13 +10,14 @@ class NeuralNetwork
     public:
         NeuralNetwork(std::vector<int>);
         Matrix * guess(double[], int size);
+        void setLearningRate(const double);
         void train(double[], double[], int, int);
         ~NeuralNetwork();
         
     private:
         LayerPtr * layers;
         int size;
-        double learningRate = 0.1;
+        double learningRate;
 };
 
 #endif // NEURAL_NETWORK

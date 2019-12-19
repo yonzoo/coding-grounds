@@ -1,6 +1,6 @@
 #ifndef LAYER_HPP
 #define LAYER_HPP
-#include "matrix.hpp"
+#include "../matrix_lib/matrix.hpp"
 
 class Layer
 {

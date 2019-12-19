@@ -1,7 +1,8 @@
-#include "neural_network.hpp"
 #include <cmath>    
 #include <vector>
 #include <iostream>
+#include "neural_network.hpp"
+#include "layer.cpp"
 
 double sigmoid(double x) {
   return 1 / (1 + exp(-x));
@@ -17,10 +18,20 @@ layers = new LayerPtr[size];
 for (int i = 0; i < size; i++) {
   layers[i] = new Layer(nodesPerLayer[i], nodesPerLayer[i + 1]);
 }
+setLearningRate(0.1);
 }
 
 NeuralNetwork::~NeuralNetwork() {
   delete layers;
+}
+
+void NeuralNetwork::setLearningRate(const double learningRate) {
+  if (learningRate > 0 && learningRate < 1) {
+    this->learningRate = learningRate;
+  }
+  else {
+    std::cerr << "Learning rate must be between 0 and 1";
+  }
 }
 
 Matrix *NeuralNetwork::guess(double inputs_array[], int inputs_size) {

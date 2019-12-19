@@ -1,7 +1,7 @@
-#include "matrix.hpp"
 #include <iostream>
 #include <stdlib.h>
 #include <time.h> 
+#include "matrix.hpp"
 
 Matrix::Matrix(const int rows, const int cols) {
   this->rows = rows;
@@ -41,11 +41,6 @@ void Matrix::setData(int i, int j, double value) {
   else {
     std::cout << "Out of bounds";
   }
-}
-
-double randMToN(double M, double N)
-{
-    return M + (rand() / ( RAND_MAX / (N-M) ) ) ;  
 }
 
 void Matrix::randomize() {
