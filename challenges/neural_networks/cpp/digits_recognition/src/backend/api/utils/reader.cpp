@@ -5,7 +5,7 @@
 #include <string>
 
 Data ** Reader::readTrainData(const int INPUTS, const int OUTPUTS, const int TOTAL_TRAINING_AMOUNT) {
-  Data **trainDataset = new Data*[TOTAL_TRAINING_AMOUNT];
+  Data **trainDataset = new Data*[TOTAL_TRAINING_AMOUNT]; //TODO convert to data class or smart pointer
   for (int i = 0; i < TOTAL_TRAINING_AMOUNT; i++) {
     trainDataset[i] = new Data(INPUTS, OUTPUTS);
   }
