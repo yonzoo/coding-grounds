@@ -3,6 +3,7 @@ package com.keksec.data_structures.custom_linked_list;
 import com.keksec.data_structures.custom_hash_map.MyHashMap;
 
 import java.util.Hashtable;
+import java.util.Stack;
 
 public class Node<V> {
     public V value;
@@ -155,7 +156,6 @@ public class Node<V> {
 
     //Task 5(Recursive): Write function that gets two linked list looking like 1 -> 2 -> 3, 4 -> 5 -> 6 and returns sum of these lists in reversed order
     //Example: With (1 -> 2 -> 3) + (4 -> 5 -> 6) function returns 9 -> 7 -> 5(321 + 654)
-    //TODO: Добавить поддержку сложения листов по типу 1 -> 2 -> 3 -> 4 + 6 -> 5 ->9
     public static Node<Integer> recursiveReverseSum(Node<Integer> a, Node<Integer> b, int remainder) {
         if (a != null && b != null) {
             int sum = a.value + b.value;
@@ -173,12 +173,72 @@ public class Node<V> {
         return a;
     }
 
-    //TODO: Добавить поддержку сложения листов по типу 1 -> 2 -> 3 -> 4 + 6 -> 5 -> 9 и ориг порядка сложения
-    //Task 5(Recursive): Write function that gets two linked list looking like 1 -> 2 -> 3, 4 -> 5 -> 6 and returns sum of these lists in order
-    //Example: With (1 -> 2 -> 3) + (4 -> 5 -> 6) function returns 5 -> 7 -> 9(123 + 456)
-    public static Node<Integer> recursiveSum(Node<Integer> a, Node<Integer> b, int  remainder) {
-        //TODO
-        return null;
+
+    //Task 6: Detect if a linked list has a loop and return the node which is the start of this loop
+    public Node<V> findLoop() {
+        Node<V> head = this;
+        Node<V> slow = head;
+        Node<V> fast = head;
+
+        //Find meeting point
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast)
+                break;
+        }
+
+        //Error check: No meeting point, therefore - no loop
+        if (fast == null || fast.next == null)
+            return null;
+
+        //Move slow to head. Now if they move at the same pace they must meet at the loop start
+        slow = head;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return fast;
+    }
+
+    //Task Bonus: Print reversed linked list
+    public boolean printReversed(Node<V> p, boolean rev) {
+        if (p == null) {
+            return true;
+        }
+        if (printReversed(p.next, rev)) {
+            System.out.println(p.value);
+            return true;
+        }
+        return false;
+    }
+
+    //Check if linked list is palindrome: Example (1 -> 2 -> 3 -> 2 -> 1) must return true
+    public boolean isPalindrom() {
+        Node<V> fast = this;
+        Node<V> slow = this;
+
+        Stack<V> stack = new Stack<>();
+
+        while (fast != null && fast.next != null) {
+            stack.push(slow.value);
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        if (fast != null) {
+            slow = slow.next;
+        }
+
+        while (slow != null) {
+            V top = stack.pop();
+            if (top != slow.value)
+                return false;
+            slow = slow.next;
+        }
+        return true;
     }
 }
 
