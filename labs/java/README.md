@@ -1,1 +1,1 @@
-This project contents my java tasks from 3 semester at Saint-Petersburg Polytechnic University
+This project contents my java solutions which i made during studying at Saint-Petersburg Polytechnic University
