@@ -1,12 +1,13 @@
 # Лабораторная_5
 
-## [Задание](./documentation/Task.md)
+## Задание
+
+Реализовать графический интерфейс к [лабораторной 4](../lab_4/README.md).
 
 ## Пример работы программы
 
 ![Screen one](./res/screen1.png)
-![Screen two](./res/screen2.png)
-![Screen three](./res/screen3.png)
+![Screen three](./res/screen2.png)
 
 ## Инструкция по сборке проекта
 
