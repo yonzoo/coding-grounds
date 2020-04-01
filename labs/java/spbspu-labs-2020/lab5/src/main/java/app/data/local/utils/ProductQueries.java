@@ -1,5 +1,8 @@
-package sample.utilities;
+package app.data.local.utils;
 
+/**
+ * Class holds database queries templates
+ */
 public class ProductQueries {
     private ProductQueries() {
         //restrict instantiation
