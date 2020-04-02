@@ -19,8 +19,6 @@ import javafx.scene.text.TextAlignment;
 
 import java.util.List;
 
-import static app.controller.utils.ErrorMessages.*;
-
 /**
  * Class controls Main.fxml view
  */
@@ -90,12 +88,11 @@ public class Controller {
   @FXML
   private void handleFillBtnClick(ActionEvent event) {
     try {
-      int n = Integer.parseInt(fillText.getText());
-      repository.fill(n);
+      repository.fill(fillText.getText());
       scrollPane.setContent(getEntries());
       setSuccessStatus();
     } catch (Exception e) {
-      setFailStatus(FILL_FORMAT_ERROR);
+      setFailStatus(e.getMessage());
     }
   }
 
@@ -103,13 +100,12 @@ public class Controller {
   private void handleAddBtnClick(ActionEvent event) {
     try {
       String name = addNameText.getText();
-      double price = Double.parseDouble(addPriceText.getText());
+      String price = addPriceText.getText();
       repository.add(name, price);
       scrollPane.setContent(getEntries());
       setSuccessStatus();
     } catch (Exception e) {
-      e.printStackTrace();
-      setFailStatus(ADD_FORMAT_ERROR);
+      setFailStatus(e.getMessage());
     }
   }
 
@@ -121,8 +117,7 @@ public class Controller {
       scrollPane.setContent(getEntries());
       setSuccessStatus();
     } catch (Exception e) {
-      e.printStackTrace();
-      setFailStatus(DELETE_FORMAT_ERROR);
+      setFailStatus(e.getMessage());
     }
   }
 
@@ -133,8 +128,7 @@ public class Controller {
       scrollPane.setContent(getEntries(List.of(repository.getPrice(name))));
       setSuccessStatus();
     } catch (Exception e) {
-      e.printStackTrace();
-      setFailStatus(GET_PRICE_FORMAT_ERROR);
+      setFailStatus(e.getMessage());
     }
   }
 
@@ -142,26 +136,24 @@ public class Controller {
   private void handleChangePriceBtnClick(ActionEvent event) {
     try {
       String name = changePriceNameText.getText();
-      double price = Double.parseDouble(changePricePriceText.getText());
+      String price = changePricePriceText.getText();
       repository.changePrice(name, price);
       scrollPane.setContent(getEntries(List.of(repository.getPrice(name))));
       setSuccessStatus();
     } catch (Exception e) {
-      e.printStackTrace();
-      setFailStatus(CHANGE_PRICE_FORMAT_ERROR);
+      setFailStatus(e.getMessage());
     }
   }
 
   @FXML
   private void handleFilterBtnClick(ActionEvent event) {
     try {
-      double min = Double.parseDouble(filterMinText.getText());
-      double max = Double.parseDouble(filterMaxText.getText());
+      String min = filterMinText.getText();
+      String max = filterMaxText.getText();
       scrollPane.setContent(getEntries(repository.getProductsByPrice(min, max)));
       setSuccessStatus();
     } catch (Exception e) {
-      e.printStackTrace();
-      setFailStatus(FILTER_FORMAT_ERROR);
+      setFailStatus(e.getMessage());
     }
   }
 
@@ -171,8 +163,7 @@ public class Controller {
       scrollPane.setContent(getEntries());
       setSuccessStatus();
     } catch (Exception e) {
-      e.printStackTrace();
-      setFailStatus(SHOW_ALL_ERROR);
+      setFailStatus(e.getMessage());
     }
   }
 

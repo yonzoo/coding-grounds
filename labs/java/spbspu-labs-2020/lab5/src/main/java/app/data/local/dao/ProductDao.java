@@ -15,6 +15,7 @@ import static app.data.local.utils.ProductQueries.*;
  */
 public class ProductDao {
   private static ProductDao instance;
+  private static final String NO_PRODUCT_MESSAGE = "No product was found";
 
   private Connection con = null;
   private PreparedStatement prepareStat = null;
@@ -118,7 +119,7 @@ public class ProductDao {
     if (deletedRows > 0)
       log(title + " deleted successfully");
     else
-      log("Could not find element with title " + title);
+      throw new SQLException(NO_PRODUCT_MESSAGE);
   }
 
   /**
@@ -156,7 +157,7 @@ public class ProductDao {
       double cost = rs.getDouble("cost");
       product = new Product(id, prodid, title, cost);
     }
-    if (product == null) throw new SQLException("No product was found");
+    if (product == null) throw new SQLException(NO_PRODUCT_MESSAGE);
     return product;
   }
 
@@ -192,7 +193,8 @@ public class ProductDao {
     prepareStat = con.prepareStatement(CHANGE_PRICE_QUERY);
     prepareStat.setDouble(1, newPrice);
     prepareStat.setString(2, title);
-    prepareStat.executeUpdate();
+    int updatedProducts = prepareStat.executeUpdate();
+    if (updatedProducts == 0) throw new SQLException(NO_PRODUCT_MESSAGE);
     log(title + " price was updated successfully");
   }
 
