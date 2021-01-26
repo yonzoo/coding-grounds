@@ -1,2 +1,2 @@
-# Здесь лежат мои решения задач с Rosalind. Если кто-то запушит описание к каждой задаче, буду очень рад :P
-***By Дмитрий Назаров***
+# Rosalind problems
+This contains my solutions to Rosalind problems
